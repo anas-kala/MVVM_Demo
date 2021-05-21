@@ -33,13 +33,22 @@ namespace MVVM_Demo.ViewModels
         /// Gets or sets a system boolean value for whether and the customer can be updated.
         /// </summary>
         /// <returns></returns>
-        internal bool CanUpdate { get; set; }
+        internal bool CanUpdate
+        {
+            get
+            {
+                if (Customer == null)
+                    return false;
+                return !string.IsNullOrEmpty(Customer.Name);
+            }
+        }
 
         /// <summary>
         /// Saves changes made to the customer instance.
         /// </summary>
         public void SaveChanges()
         {
+            // here we would save information to a db for example
             Debug.Assert(false, "The customer has been changed to " + Customer.Name);
         }
 
