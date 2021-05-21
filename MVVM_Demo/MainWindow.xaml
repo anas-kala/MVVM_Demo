@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:MVVM_Demo"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+    <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+        <Label>Customer name</Label>
+        <TextBox Text="{Binding Customer.Name}" Width="136"></TextBox>
+        <Button Command="{Binding UpdateCommand}">Update</Button>
+    </StackPanel>
 </Window>
